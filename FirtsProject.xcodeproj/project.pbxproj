@@ -13,9 +13,13 @@
 		87BC67C32BD863CC00DC4BBD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 87BC67C22BD863CC00DC4BBD /* Base */; };
 		87BC67C52BD863CE00DC4BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87BC67C42BD863CE00DC4BBD /* Assets.xcassets */; };
 		87BC67C82BD863CE00DC4BBD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 87BC67C72BD863CE00DC4BBD /* Base */; };
+		C96E02F1A65B52B340F8F72C /* Pods_FirtsProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812943805D4F408007D654BE /* Pods_FirtsProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		317DCCE712558FCD57D68DA3 /* Pods-FirtsProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirtsProject.debug.xcconfig"; path = "Target Support Files/Pods-FirtsProject/Pods-FirtsProject.debug.xcconfig"; sourceTree = "<group>"; };
+		3E6EED927A343F538865A370 /* Pods-FirtsProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirtsProject.release.xcconfig"; path = "Target Support Files/Pods-FirtsProject/Pods-FirtsProject.release.xcconfig"; sourceTree = "<group>"; };
+		812943805D4F408007D654BE /* Pods_FirtsProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirtsProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BC67B82BD863CC00DC4BBD /* FirtsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirtsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BC67BB2BD863CC00DC4BBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87BC67BD2BD863CC00DC4BBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96E02F1A65B52B340F8F72C /* Pods_FirtsProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DEFAA495D3359292327FCAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				812943805D4F408007D654BE /* Pods_FirtsProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66DF7A529455F45C4CAD1843 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				317DCCE712558FCD57D68DA3 /* Pods-FirtsProject.debug.xcconfig */,
+				3E6EED927A343F538865A370 /* Pods-FirtsProject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		87BC67AF2BD863CC00DC4BBD = {
 			isa = PBXGroup;
 			children = (
 				87BC67BA2BD863CC00DC4BBD /* FirtsProject */,
 				87BC67B92BD863CC00DC4BBD /* Products */,
+				66DF7A529455F45C4CAD1843 /* Pods */,
+				5DEFAA495D3359292327FCAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87BC67CC2BD863CE00DC4BBD /* Build configuration list for PBXNativeTarget "FirtsProject" */;
 			buildPhases = (
+				95659815B17570E1B08BF1C8 /* [CP] Check Pods Manifest.lock */,
 				87BC67B42BD863CC00DC4BBD /* Sources */,
 				87BC67B52BD863CC00DC4BBD /* Frameworks */,
 				87BC67B62BD863CC00DC4BBD /* Resources */,
+				9BAC221B55E312EC09413C7D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		95659815B17570E1B08BF1C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirtsProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BAC221B55E312EC09413C7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirtsProject/Pods-FirtsProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirtsProject/Pods-FirtsProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirtsProject/Pods-FirtsProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87BC67B42BD863CC00DC4BBD /* Sources */ = {
@@ -287,6 +356,7 @@
 		};
 		87BC67CD2BD863CE00DC4BBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 317DCCE712558FCD57D68DA3 /* Pods-FirtsProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +384,7 @@
 		};
 		87BC67CE2BD863CE00DC4BBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E6EED927A343F538865A370 /* Pods-FirtsProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
